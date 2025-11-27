@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management & CSV Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ========================== -->
+        <!--        CSV UPLOAD          -->
+        <!-- ========================== -->
+        <h1>Upload Products CSV</h1>
+        <p class="subtitle">
+            Upload up to <strong>500,000 products</strong>.
+            Duplicate SKUs will be overwritten automatically.
+        </p>
+
+        <div id="upload-area" class="upload-area">
+            <span>Drag & Drop CSV here or click to select</span>
+            <input type="file" id="file-input" accept=".csv">
+        </div>
+
+        <div class="progress-container" id="progress-container" style="display:none;">
+            <div class="progress-bar" id="progress-bar"></div>
+            <span id="progress-text">0%</span>
+        </div>
+
+        <div id="status" class="status"></div>
+        <button id="retry-btn" class="retry-btn" style="display:none;">Retry Upload</button>
+
+        <hr class="divider">
+
+
+        <!-- ========================== -->
+        <!--     PRODUCT MANAGEMENT     -->
+        <!-- ========================== -->
+
+        <h1>Product Management</h1>
+
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search by SKU, Name, Description">
+
+            <select id="activeFilter">
+                <option value="">All Status</option>
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+            </select>
+
+            <button id="filterBtn">Filter</button>
+            <button id="createBtn">Create Product</button>
+            <button id="bulk-delete-btn" class="btn btn-danger">Delete All Products</button>
+        </div>
+
+        <table id="productsTable">
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Active</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="pagination">
+            <button id="prevPage">Prev</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+
+    </div>
+
+
+    <!-- ========================== -->
+    <!--         MODAL FORM         -->
+    <!-- ========================== -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Create Product</h2>
+
+            <form id="productForm">
+                <input type="hidden" id="productId">
+
+                <input type="text" id="sku" placeholder="SKU" required>
+                <input type="text" id="name" placeholder="Name" required>
+                <textarea id="description" placeholder="Description"></textarea>
+
+                <label>
+                    <input type="checkbox" id="active" checked> Active
+                </label>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main JS File -->
+    <script src="{{ url_for('static', filename='app.js')}}"></script>
+
+</body>
+</html>

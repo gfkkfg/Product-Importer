@@ -1,0 +1,353 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* Title */
+h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Subtitle */
+.subtitle {
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+/* Upload area */
+.upload-area {
+    border: 2px dashed #fff;
+    padding: 50px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-area:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.upload-area input[type="file"] {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Progress */
+.progress-container {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: relative;
+    height: 25px;
+    width: 100%;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #00ffcc;
+    border-radius: 10px;
+    transition: width 0.2s;
+}
+
+#progress-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    font-weight: bold;
+}
+
+/* Status message */
+.status {
+    margin-top: 15px;
+    font-size: 1rem;
+    min-height: 20px;
+}
+
+/* Retry Button */
+.retry-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff4c4c;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.retry-btn:hover {
+    background: #ff0000;
+}
+
+/* === Product Management Page === */
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 25px;
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters input, 
+.filters select, 
+.filters button {
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.filters input::placeholder,
+.filters select::placeholder {
+    color: #ccc;
+}
+
+.filters input:focus,
+.filters select:focus {
+    background: rgba(255,255,255,0.2);
+}
+
+.filters button {
+    background: #00ffcc;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,255,204,0.3);
+}
+
+.filters button:hover {
+    background: #00e6b8;
+}
+
+/* Table */
+#productsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+#productsTable th, #productsTable td {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+#productsTable th {
+    background: rgba(0,0,0,0.35);
+    color: #00ffcc;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#productsTable td {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+}
+
+#productsTable tr:hover td {
+    background: rgba(0,0,0,0.25);
+}
+
+/* Table buttons */
+#productsTable button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-right: 5px;
+    transition: 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+#productsTable button.edit {
+    background: #00ffcc;
+    color: #000;
+}
+
+#productsTable button.edit:hover {
+    background: #00e6b8;
+}
+
+#productsTable button.delete {
+    background: #ff4c4c;
+    color: #fff;
+}
+
+#productsTable button.delete:hover {
+    background: #ff0000;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 8px 18px;
+    border-radius: 12px;
+    border: none;
+    background: #00ffcc;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,255,204,0.3);
+}
+
+.pagination button:hover {
+    background: #00e6b8;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: rgba(255,255,255,0.05);
+    margin: 7% auto;
+    padding: 30px 25px;
+    width: 400px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: left;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #00ffcc;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.modal-content .close:hover {
+    color: #ff4c4c;
+}
+
+.modal-content input, 
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+    color: #ccc;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    background: rgba(255,255,255,0.2);
+}
+
+.modal-content button {
+    padding: 12px 25px;
+    border-radius: 15px;
+    border: none;
+    background: #00ffcc;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.modal-content button:hover {
+    background: #00e6b8;
+}

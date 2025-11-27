@@ -1,0 +1,4 @@
+Flask
+Celery
+redis
+psycopg2-binary
